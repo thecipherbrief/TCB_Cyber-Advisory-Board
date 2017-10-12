@@ -22,6 +22,7 @@ global $article_exerpt;
         }
         $title = isset( $post->post_title ) ? $post->post_title : '';
         if ( is_single() ) {
+            the_post_thumbnail( 'thecipherbrief-featured-image' );
             the_title( '<h1 class="entry-title">', '</h1>' );
             the_content('<p>', '</p>');
         } else {
