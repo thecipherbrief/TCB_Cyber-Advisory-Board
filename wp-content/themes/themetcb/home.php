@@ -11,20 +11,23 @@
     <h1>Our Latest News</h1>
     <?php
 // the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => 'latest', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+$wpb_all_query = new WP_Query(array(
+  'post_type' =>'post',
+  'category_name' => 'latest',
+  'post_status' =>'publish',
+  'posts_per_page' => 4,
+  'orderby' => 'date',
+  'order' => 'DESC'
+  ));
+?>
 
 <?php if ( $wpb_all_query->have_posts() ) : ?>
-
-<ul>
-
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
     <!-- end of the loop -->
-
-</ul>
-
     <?php wp_reset_postdata(); ?>
 
 <?php else : ?>
@@ -34,21 +37,26 @@ $wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => 'lat
   </div>
   <div class="cab">
     <h1>CAB Stuff</h1>
-    <?php
-// the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => 'cab', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
-
+    <?php $wpb_all_query = new WP_Query(array(
+  'post_type' =>'post',
+  'category_name' => 'cab',
+  'post_status' =>'publish',
+  'posts_per_page' => 4,
+  'orderby' => 'date',
+  'order' => 'DESC'
+  ));
+  ?>
 <?php if ( $wpb_all_query->have_posts() ) : ?>
 
-<ul>
+
 
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <h1><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h1>
+        <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
     <!-- end of the loop -->
 
-</ul>
 
     <?php wp_reset_postdata(); ?>
 
@@ -61,19 +69,24 @@ $wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => 'cab
     <h1>Threats!</h1>
     <?php
 // the query
-$wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => 'threat', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+$wpb_all_query = new WP_Query(array(
+  'post_type'=>'post',
+  'category_name' => 'threat',
+  'post_status'=>'publish',
+  'posts_per_page'=>4));
+  ?>
 
 <?php if ( $wpb_all_query->have_posts() ) : ?>
 
-<ul>
+
 
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
     <!-- end of the loop -->
 
-</ul>
 
     <?php wp_reset_postdata(); ?>
 
