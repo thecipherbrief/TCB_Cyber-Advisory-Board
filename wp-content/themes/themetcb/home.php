@@ -24,6 +24,7 @@ $wpb_all_query = new WP_Query(array(
 <?php if ( $wpb_all_query->have_posts() ) : ?>
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thecipherbrief-featured-image' ); ?></a>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
@@ -52,7 +53,8 @@ $wpb_all_query = new WP_Query(array(
 
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
-        <h1><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h1>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thecipherbrief-featured-image' ); ?></a>
+        <h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h3>
         <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
     <!-- end of the loop -->
@@ -82,6 +84,7 @@ $wpb_all_query = new WP_Query(array(
 
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+        <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thecipherbrief-featured-image' ); ?></a>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
