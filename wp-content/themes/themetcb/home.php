@@ -13,11 +13,11 @@
 // the query
 $wpb_all_query = new WP_Query(array(
   'post_type' =>'post',
+  'category_name' => 'latest',
   'post_status' =>'publish',
   'posts_per_page' => 4,
-  'orderby'=> 'date',
-  'order' => 'DESC',
-  'tag' => 'CAB'
+  'orderby' => 'date',
+  'order' => 'DESC'
   ));
 ?>
 
@@ -25,7 +25,7 @@ $wpb_all_query = new WP_Query(array(
     <!-- the loop -->
     <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
         <h1><a href="<?php the_permalink(); ?>"> <?php the_title(); ?> </a> </h1>
-        <p><?php the_content(); ?></p>
+        <p><?php echo wp_trim_words( get_the_content(), 40, '...' );?> </p>
     <?php endwhile; ?>
     <!-- end of the loop -->
     <?php wp_reset_postdata(); ?>
