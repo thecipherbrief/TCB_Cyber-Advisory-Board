@@ -306,8 +306,8 @@
     $wp_query = new WP_Query(array(
         'cache_results' => false,
         'paged' => $paged,
-        'posts_per_page' => 4,
-        'tags' => 'CAB',
+        'posts_per_page' => -1,
+        'tag' => 'true',
         'orderby' => 'date',
         'order' => 'ASC'
     ));
