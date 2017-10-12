@@ -33,7 +33,7 @@ $wpb_all_query = new WP_Query(array(
 <?php else : ?>
     <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-
+<a href="/category/latest">VIEW MORE</a>
   </div>
   <div class="cab">
     <h1>CAB Stuff</h1>
@@ -63,7 +63,7 @@ $wpb_all_query = new WP_Query(array(
 <?php else : ?>
     <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-
+<a href="/category/cab">VIEW MORE</a>
   </div>
   <div class="threat">
     <h1>Threats!</h1>
@@ -93,7 +93,7 @@ $wpb_all_query = new WP_Query(array(
 <?php else : ?>
     <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 <?php endif; ?>
-
+<a href="/category/threat">VIEW MORE</a>
   </div>
 
 </div>

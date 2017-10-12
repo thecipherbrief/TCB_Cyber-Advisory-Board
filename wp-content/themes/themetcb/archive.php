@@ -28,7 +28,39 @@ the_custom_above_banner();
                     } else {
                         echo '<h1>'.post_type_archive_title( '', false ).'</h1>';
                     }
+                    $cat = $wp_query->queried_object->name;
                 ?>
+
+
+
+                <div class="cab">
+                  <h1>CAB Stuff</h1>
+                  <?php
+              // the query
+              $wpb_all_query = new WP_Query(array('post_type'=>'post', 'category_name' => "{$cat}", 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+
+              <?php if ( $wpb_all_query->have_posts() ) : ?>
+
+              <ul>
+
+                  <!-- the loop -->
+                  <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+                      <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+                  <?php endwhile; ?>
+                  <!-- end of the loop -->
+
+              </ul>
+
+                  <?php wp_reset_postdata(); ?>
+
+              <?php else : ?>
+                  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+              <?php endif; ?>
+
+                </div>
+
+
+
                 <?php
                     the_archive_description( '<div class="taxonomy-description">', '</div>' );
                 ?>
