@@ -6,7 +6,6 @@
     get_header();
     the_custom_above_banner();
 ?>
-
 <div class="holder-container">
   <div class="recent-news">
     <h1>Our Latest News</h1>
@@ -37,8 +36,6 @@ $wpb_all_query = new WP_Query(array(
   </div>
 
 </div>
-
-
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-7418758779618043",enable_page_level_ads: true});</script>
     <script>
