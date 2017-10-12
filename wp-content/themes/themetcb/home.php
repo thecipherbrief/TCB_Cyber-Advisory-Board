@@ -306,58 +306,64 @@
     $wp_query = new WP_Query(array(
         'cache_results' => false,
         'paged' => $paged,
-        'posts_per_page' => 1,
-        'post_type' => 'CAB',
+        'posts_per_page' => 4,
+        'tags' => 'CAB',
         'orderby' => 'date',
-        'order' => 'DESC'
+        'order' => 'ASC'
     ));
     if(IsSet($wp_query->posts)):
-        $post = $wp_query->posts[0];
-        $metapost = get_post_meta($post->ID);
+        foreach($wp_query->posts as $post) {
+          $metapost = get_post_meta($post->ID);
+        }
+        // $post = $wp_query->posts[0];
+        // for($i=1;$i<=$wp_query->max_num_pages;$i++){
+        //     echo'<li class="pager-item'.($paged == $i ? ' pager-current' : '').'"><a title="Go to page '.$i.'" href="/?page='.$i.'">'.$i.'</a></li>';
+        // }
+        // foreach($wp_query->posts as $post) {
+            // $authors   = wp_get_post_terms($post->ID, 'authors');
+            // $metapost = get_post_meta($post->ID);
+            // $tauthor = array();
+            // foreach ($authors as $author){
+            //     $tauthor[] = $author->name;
+            // }
+        // $metapost = get_post_meta($post->ID);
 ?>
 
                         <div class="view view-cipher-take view-id-cipher_take view-display-id-block view-dom-id-3ee9bc67a2ea87d9045f8fbad9597859">
                             <div class="view-header">
                                 <h2>OUR LATEST REPORTING</h2>
                             </div>
-                            <div class="view-content" id="cipherTakeContent">
+                            <div class="view-content">
                                 <div id="mCSB_1" class="mCustomScrollBox mCS-inset mCSB_vertical mCSB_inside" style="max-height: 485px;" tabindex="0">
                                     <div id="mCSB_1_container" class="mCSB_container" style="position: relative; left: 0px; padding: 0 25px;" dir="ltr">
                                         <div>
                                             <h3><?php echo($metapost['wpcf-labelforarticletitle'][0] ? 'Headline: ' : '').$post->post_title?></h3>
                                             <p><?php echo $post->post_content ?></p>
-                                            <p><em><?php echo $metapost['wpcf-ciphertake'][0] ?></em></p>
                                         </div>
                                     </div>
-                                    <!-- <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-inset mCSB_scrollTools_vertical" style="display: block;">
-                                        <div class="mCSB_draggerContainer">
-                                            <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 416px; max-height: 475px; top: 69px;" oncontextmenu="return false;">
-                                                <div class="mCSB_dragger_bar" style="line-height: 30px;"></div>
-                                            </div>
-                                            <div class="mCSB_draggerRail"></div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
-                            <h2 class="element-invisible">Pages</h2>
-                            <div class="item-list">
+                            <!-- <div class="item-list">
                                 <ul class="pager">
                             <?php
-                            if($wp_query->max_num_pages > 5) { $wp_query->max_num_pages = 5 ; }
-                            if($wp_query->max_num_pages > 1):
-                                for($i=1;$i<=$wp_query->max_num_pages;$i++){
-                                    echo'<li class="pager-item'.($paged == $i ? ' pager-current' : '').'"><a title="Go to page '.$i.'" href="/?page='.$i.'">'.$i.'</a></li>';
-                                }
-                            else:
-                                echo'<li class="pager-item pager-current">1</li>';
-                            endif;
+                            // if($wp_query->max_num_pages > 5) { $wp_query->max_num_pages = 5 ; }
+                            // if($wp_query->max_num_pages > 1):
+                            //     for($i=1;$i<=$wp_query->max_num_pages;$i++){
+                            //         echo'<li class="pager-item'.($paged == $i ? ' pager-current' : '').'"><a title="Go to page '.$i.'" href="/?page='.$i.'">'.$i.'</a></li>';
+                            //     }
+                            // else:
+                            //     echo'<li class="pager-item pager-current">1</li>';
+                            // endif;
                             ?>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
 <?php endif; ?>
+<!-- end of Our Latest Reporting -->
+
+
                 <div id="block-views-home-reporter_links" class="block block-views block-odd clearfix">
                     <div class="content clearfix">
 <?php
