@@ -12,6 +12,7 @@ Text Domain: thecipherbrief
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+0.0 CAB Mircrosite
 1.0 Normalize
 2.0 Accessibility
 3.0 Alignments
@@ -40,6 +41,32 @@ Text Domain: thecipherbrief
 19.0 Media Queries
 20.0 Print
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+0.0 CAB Microsite
+Styles for CAB site
+--------------------------------------------------------------*/
+
+
+.holder-container {
+  display: flex!important;
+  flex-direction: row!important;
+  align-items: center!important;
+  justify-content: center!important;
+  width: 100%;
+}
+
+.recent-news, .cab, .threat {
+  display: flex!important;
+  flex-direction: column!important;
+  width: 30%
+}
+
+.recent-news, .cab {
+  border-right: 1px gray solid;
+  padding-right: 2%;
+  margin-right: 2%;
+}
 
 
 /*--------------------------------------------------------------
