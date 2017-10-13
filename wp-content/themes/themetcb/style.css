@@ -56,16 +56,39 @@ Styles for CAB site
   width: 100%;
 }
 
-.recent-news, .cab, .threat {
+.col {
   display: flex!important;
   flex-direction: column!important;
   width: 30%
 }
 
-.recent-news, .cab {
+#recent-news, #cab {
   border-right: 1px gray solid;
   padding-right: 2%;
   margin-right: 2%;
+}
+
+.col h1 {
+  text-align: center;
+}
+
+.col h1 a {
+    text-decoration: none;
+    color: white;
+    background-color: #000e31;
+    padding: 3px;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    -webkit-transition: background-color 500ms ease-in-out;
+    -moz-transition: background-color 500ms ease-in-out;
+    -ms-transition: background-color 500ms ease-in-out;
+    -o-transition: background-color 500ms ease-in-out;
+    transition: background-color 500ms ease-in-out;
+}
+
+.col h1 a:hover {
+    background-color: #800000;
 }
 
 

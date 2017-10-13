@@ -7,8 +7,8 @@
     the_custom_above_banner();
 ?>
 <div class="holder-container">
-  <div class="recent-news">
-    <h1>Our Latest News</h1>
+  <div class='col' id="recent-news">
+    <h1><a href="/category/latest">Our Latest News</a></h1>
     <?php
 // the query
 $wpb_all_query = new WP_Query(array(
@@ -36,8 +36,8 @@ $wpb_all_query = new WP_Query(array(
 <?php endif; ?>
 <a href="/category/latest">VIEW MORE</a>
   </div>
-  <div class="cab">
-    <h1>CAB Stuff</h1>
+  <div <div class='col' id="cab">
+    <h1><a href="/category/cab">CAB Stuff</a></h1>
     <?php $wpb_all_query = new WP_Query(array(
   'post_type' =>'post',
   'category_name' => 'cab',
@@ -67,8 +67,8 @@ $wpb_all_query = new WP_Query(array(
 <?php endif; ?>
 <a href="/category/cab">VIEW MORE</a>
   </div>
-  <div class="threat">
-    <h1>Threats!</h1>
+  <div <div class='col' id="threat">
+    <h1><a href="/category/threat">Threats!</a></h1>
     <?php
 // the query
 $wpb_all_query = new WP_Query(array(
